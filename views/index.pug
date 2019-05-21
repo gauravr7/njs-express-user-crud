@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 master #{title}
+    ul
+        each employee, i in employees
+            li= employee.name
