@@ -1,0 +1,19 @@
+br
+hr
+if (employees == 0) 
+    h6 No Results Found
+else
+    h6 Searched Results 
+
+.search-list
+    each employee, i in employees
+        .card(style='width: 18rem; margin: 20px;')
+            img.card-img-top(src = (employee.gender === 'female' ? '../assets/img/female.png' : '../assets/img/male.png'))
+            .card-body
+                h5.card-title= employee.name
+                p.card-text= employee.age
+                p.card-text= employee.gender
+                a.btn.btn-primary(href='/admin/edit/'+ employee._id) Edit
+
+
+

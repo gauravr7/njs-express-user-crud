@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h4 #{title}
+    form(method='POST' action='/admin/edit/'+employee._id)
+        #form-group
+            label Name:
+            input.form-control(name='name', type='text' value=employee.name)
+
+        #form-group
+            label Age:
+            input.form-control(name='age', type='text' value=employee.age)
+        
+        #form-group
+            label Gender:
+            select.form-control(name='gender')
+                option(selected=employee.gender == '') select
+                option(selected=employee.gender == 'male', value = 'male') Male
+                option(selected=employee.gender == 'female', value = 'female') Female
+            
+        br
+        input.btn.btn-primary(type='submit', value='submit')

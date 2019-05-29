@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h4 View All
+    ul.list-group
+        each employee, i in employees
+            li.list-group-item
+                a.app-emp-name(href="/admin/view/"+employee._id)= employee.name
+    

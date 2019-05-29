@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h4 Search Employee
+    form
+        #form-group
+            label Name:
+            input.form-control.search-name(name='name', type='text')
+        br
+        input.btn.btn-primary.search-user(type='button', value='submit')
+    div.search-result 
+        

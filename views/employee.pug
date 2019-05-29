@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    div.row
+        div.col-sm-6
+            h5.app-emp-name Details of #{employee.name}
+        div.col-sm-6
+            a.app-back-btn(href='/admin/viewall') Back 
+    table.table.table-bordered
+        thead
+            tr
+                th Name
+                th Age
+                th Gender
+        tbody
+            tr
+                td= employee.name
+                td= employee.age
+                td= employee.gender
+
+    hr
+    
+    a.btn.btn-primary(href='/admin/edit/'+ employee._id) Edit 
+    a.btn.btn-danger.app-delete-btn(href='#' data-id=employee._id) Delete

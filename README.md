@@ -1,6 +1,23 @@
 # Employee Management System
 Its a self learning project for NodeJs and Express
 
+`npm start` to start the app `http://localhost:3333/admin/viewall`
+
+# Helpers
+- Install NPM package in a custom directory:  `npm install --prefix ./install/here <package>`
+- HTML form Submit method only supports `GET / POST ` rest methods can be used from AJAX.
+
+# Tech Stack
+- ExpressJS (NodeJS)
+- Mongo DB (Cloud Hosted: https://cloud.mongodb.com)
+
+# NPM Packages
+- express (Node framework) 
+- mongoose (Mongo ODM Object data modelling) 
+- pug (Jade HTML Templating) 
+- body-parser
+
+
 ## Admin Module 
 #### Route (/admin/)
 - Add New employee
@@ -8,7 +25,6 @@ Its a self learning project for NodeJs and Express
 - delete employee
 - See all employee
 - Search Particular employee
-- delete employee
 
 ## Employee Module 
 #### Route (/employee/)

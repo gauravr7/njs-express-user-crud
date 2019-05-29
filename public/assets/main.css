@@ -1,0 +1,19 @@
+.app-custom-container {
+    padding-top: 50px; 
+}
+.app-emp-name {
+    text-transform: capitalize;
+    color: rebeccapurple;
+}
+.app-delete-btn {
+    margin-left: 10px;
+}
+.app-back-btn {
+    float: right;
+}
+.search-list {
+    display: flex;
+}
+.card-img-top {
+    width: 96px;
+}

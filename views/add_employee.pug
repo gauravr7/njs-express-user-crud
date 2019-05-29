@@ -1,4 +1,21 @@
 extends layout
 
 block content
-    h1 master #{title}
+    h4 #{title}
+    form(method='POST' action='/admin/add')
+        #form-group
+            label Name:
+            input.form-control(name='name', type='text')
+
+        #form-group
+            label Age:
+            input.form-control(name='age', type='text')
+        
+        #form-group
+            label Gender:
+            select.form-control(name='gender')
+                option select
+                option(value = 'male') Male
+                option(value = 'female') Female
+        br
+        input.btn.btn-primary(type='submit', value='submit')
