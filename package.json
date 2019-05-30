@@ -18,7 +18,11 @@
   "homepage": "https://github.com/gauravr7/njs-express-user-crud#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
     "mongoose": "^5.5.10",
     "pug": "^2.0.3"
   }

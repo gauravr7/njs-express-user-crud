@@ -16,6 +16,10 @@ Its a self learning project for NodeJs and Express
 - mongoose (Mongo ODM Object data modelling) 
 - pug (Jade HTML Templating) 
 - body-parser
+- connect-flash
+- express-session
+- express-validator
+- express-messages
 
 
 ## Admin Module 
