@@ -17,6 +17,15 @@ html
             a.nav-link(href='/admin/viewall') View
           li.nav-item
             a.nav-link(href='/admin/search') Search 
+        ul.navbar-nav.navbar-right
+          if user
+            li.nav-item
+              a.nav-link(href='/users/logout') Logout
+          else 
+            li.nav-item
+              a.nav-link(href='/users/register') Register
+            li.nav-item
+              a.nav-link(href='/users/login') Login
           // li.nav-item.dropdown
               a#dropdown01.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
               .dropdown-menu(aria-labelledby='dropdown01')

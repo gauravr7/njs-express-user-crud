@@ -2,6 +2,7 @@
 Its a self learning project for NodeJs and Express
 
 `npm start` to start the app `http://localhost:3333/admin/viewall`
+Superuser - `superuser/gem123`
 
 # Helpers
 - Install NPM package in a custom directory:  `npm install --prefix ./install/here <package>`
@@ -20,15 +21,18 @@ Its a self learning project for NodeJs and Express
 - express-session
 - express-validator
 - express-messages
+- passport
+- passport-local
+- bcrypt
 
 
 ## Admin Module 
 #### Route (/admin/)
-- Add New employee
-- Edit / Update employee
-- delete employee
-- See all employee
-- Search Particular employee
+- Add New employee (`/admin/add`)
+- Edit / Update employee (`/admin/edit/:id`)
+- delete employee (`/admin/delete/:id`)
+- See all employee (`/admin/viewall`)
+- Search Particular employee (`/admin/search`)
 
 ## Employee Module 
 #### Route (/employee/)

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
+const config = require('./config/database');
+const passport = require('passport');
 
 //Init App
 const app = express();
@@ -17,11 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //Setup Mongoose connection
-// Set up mongoose connection
-let dev_db_url = 'mongodb+srv://someuser:abcd1234@cluster0-h9jcl.mongodb.net/test?retryWrites=true';
-
-
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI || config.database;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 mongoose.Promise = global.Promise;
@@ -49,9 +47,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-
-
-
 // Express Validator middleware
 app.use(expressValidator({
     errorFormatter: function(param, msg, value) {
@@ -70,6 +65,17 @@ app.use(expressValidator({
     }
 }));
 
+//Passport config
+require('./config/passport')(passport);
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('*', function(req, res, next) {
+    res.locals.user = req.user || null;
+    next();
+});
+
 // Home Route
 app.get('/', function (req, res) {
     res.send('Site Root Page');
@@ -77,7 +83,9 @@ app.get('/', function (req, res) {
 
 //Route files
 let employee = require('./routes/employee');
+let users = require('./routes/users');
 app.use('/admin', employee);
+app.use('/users', users);
 
 const port = 3333;
 
