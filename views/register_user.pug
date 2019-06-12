@@ -1,23 +1,21 @@
-extends layout
+extends layouts/login-layout
 
 block content
-    h4 Register
-    form(method='POST' action='/users/register')
-        #form-group
-            label Name:
-            input.form-control(name='name', type='text')
+    form.form-signin(method='POST' action='/users/register')
+        img.mb-4(src='../assets/img/bootstrap-solid.svg', alt='', width='72', height='72')
 
-        #form-group
-            label Username:
-            input.form-control(name='username', type='text')
+        h1.h3.mb-3.font-weight-normal Register
 
-        #form-group
-            label Password:
-            input.form-control(name='password', type='password')
+        label.sr-only(for='inputEmail') Name
+        input#inputEmail.form-control(name='name', type='text', placeholder='Name', required='', autofocus='')
 
-        #form-group
-            label Confirm:
-            input.form-control(name='password2', type='password')
-        
-        br
-        input.btn.btn-primary(type='submit', value='submit')
+        label.sr-only(for='inputEmail') User Name
+        input#inputEmail.form-control(name='username', type='text', placeholder='User Name', required='')
+
+        label.sr-only(for='inputPassword') Password
+        input#inputPassword.form-control(name='password', type='password', placeholder='Password', required='')
+
+        label.sr-only(for='inputPasswordc') Confirm Password
+        input#inputPasswordc.form-control(name='password2', type='password', placeholder='Confirm Password', required='')
+
+        button.btn.btn-lg.btn-primary.btn-block(type='submit') Register

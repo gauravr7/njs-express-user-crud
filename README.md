@@ -28,22 +28,24 @@ Superuser - `superuser/gem123`
 
 ## Admin Module 
 #### Route (/admin/)
-- Add New employee (`/admin/add`)
-- Edit / Update employee (`/admin/edit/:id`)
-- delete employee (`/admin/delete/:id`)
-- See all employee (`/admin/viewall`)
-- Search Particular employee (`/admin/search`)
+- Add New employee (`/admin/add`) - Done
+- Edit / Update employee (`/admin/edit/:id`) - Done
+- delete employee (`/admin/delete/:id`) - Done
+- See all employee (`/admin/viewall`) - Done
+- Search Particular employee (`/admin/search`) - Done
 
 ## Employee Module 
 #### Route (/employee/)
 - See Profile
 - Edit Profile
 - Delete profile
+- Payroll
 
 ## Login Module
-- Register employee
-- Login employee
-- Logout employee
+#### Route (/users/)
+- Register employee - Done
+- Login employee - Done
+- Logout employee - Done
 
 ## Access controls/ Restriction and Redirections
 - Setting Up Access control for user in the system

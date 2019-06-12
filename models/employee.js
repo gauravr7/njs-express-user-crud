@@ -16,6 +16,32 @@ let EmployeeSchema = new Schema({
         type: String, 
         required: true
     },
+    dob: {
+        type: Date,
+        required: true
+    },
+    doj: {
+        type: Date,
+        required: true
+    },
+    address: {
+        houseNumber: {
+            type: Number, 
+            required: true
+        },
+        city: {
+            type: String, 
+            required: true
+        },
+        state: {
+            type: String,
+            required: true
+        },
+        pin: {
+            type: Number, 
+            required: true
+        }
+    }
 });
 
 

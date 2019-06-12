@@ -1,0 +1,40 @@
+doctype
+html
+  head
+    title Employee Management
+    link(rel='stylesheet' href="/assets/bootstrap/dist/css/bootstrap.css") 
+    link(rel='stylesheet' href="/assets/main.css") 
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      a.navbar-brand(href='#') EMS User
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/employee/view') View Profile
+          li.nav-item
+            a.nav-link(href='/employee/edit') Edit Profile
+          li.nav-item
+            a.nav-link(href='/employee/payroll') Payroll
+        ul.navbar-nav.navbar-right
+          if user
+            li.nav-item
+              a.nav-link(href='/users/logout') Logout
+ 
+    .container.app-custom-container
+      != messages('message', locals)
+      if errors
+        each error , i in errors
+          div.alert.alert-danger #{error.msg}
+      block content
+      br
+      hr
+      footer(class="footer mt-auto py-3")
+        div(class="container")
+            p(class="text-muted") copyright &copy; 2019
+    script(src='/assets/jquery/dist/jquery.min.js')
+    script(src='/assets/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/assets/main.js')
+
+

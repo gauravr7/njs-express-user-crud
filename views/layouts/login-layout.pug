@@ -1,0 +1,20 @@
+doctype
+html
+  head
+    title Login
+    link(rel='stylesheet' href="/assets/bootstrap/dist/css/bootstrap.css") 
+    link(rel='stylesheet' href="/assets/main.css")
+    link(rel='stylesheet' href="/assets/signin.css") 
+  body.text-center
+    div.login-content
+      block content
+      != messages('message', locals)
+      if errors
+        each error , i in errors
+          div.alert.alert-danger #{error.msg}
+        p.mt-5.mb-3.text-muted © 2017-2019
+  script(src='/assets/jquery/dist/jquery.min.js')
+  script(src='/assets/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/assets/main.js')
+
+

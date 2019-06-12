@@ -47,10 +47,16 @@ router.get('/search/:name', function (req, res) {
 })
 
 // Add employee
-router.get('/add', function (req, res) {
-    res.render('add_employee', {
-        title: 'Add Employee'
-    });
+router.get('/add', ensureAuthenticated ,function (req, res, next) {
+    if(req.user.superadmin) {
+        res.render('add_employee', {
+            title: 'Add Employee'
+        });
+    } else {
+        req.flash('danger', 'Only admins can add an user');
+        res.redirect('/admin/viewall');
+    }
+    
 })
 
 // view particular employee
@@ -146,5 +152,15 @@ router.post('/add', function (req, res) {
 
     
 })
+
+// Access Control
+function ensureAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next();
+    } else {
+        req.flash('danger', 'Please login');
+        res.redirect('/users/login');
+    }
+}
 
 module.exports = router;

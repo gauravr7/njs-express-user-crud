@@ -65,11 +65,30 @@ router.get('/login', function(req, res) {
 
 //Login Process
 router.post('/login', function(req, res, next) {
-    passport.authenticate('local', {
-        successRedirect: '/admin/viewall',
-        failureRedirect: '/users/login',
-        failureFlash: true
+    
+    // passport.authenticate('local', {
+    //     successRedirect: '/admin/viewall',
+    //     failureRedirect: '/users/login',
+    //     failureFlash: true
+    // })(req, res, next);
+
+    //Custom Call Back function with details for User
+    passport.authenticate('local', function(err, user, info) {
+        if (err) { 
+            return next(err); 
+        }
+        if (!user) { 
+            return res.redirect('/users/login'); 
+        }
+        req.logIn(user, function(err) {
+        if (err) { 
+            return next(err); 
+        }
+        var path = user.superadmin ? '/admin/viewall' : '/employee/profile'
+        return res.redirect(path);
+        });
     })(req, res, next);
+    
 });
 
 //Loout Process
