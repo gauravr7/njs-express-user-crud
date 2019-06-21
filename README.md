@@ -12,6 +12,12 @@ Superuser - `superuser/gem123`
 - ExpressJS (NodeJS)
 - Mongo DB (Cloud Hosted: https://cloud.mongodb.com)
 
+# Mongo DB
+- CRUD Operations
+- Populate
+- Reference and embedded data
+
+
 # NPM Packages
 - express (Node framework) 
 - mongoose (Mongo ODM Object data modelling) 
@@ -42,6 +48,7 @@ Superuser - `superuser/gem123`
 - Payroll
 
 ## Login Module
+
 #### Route (/users/)
 - Register employee - Done
 - Login employee - Done

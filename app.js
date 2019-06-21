@@ -12,7 +12,7 @@ const passport = require('passport');
 const app = express();
 
 // Bring in data models
-let Employee = require('./models/employee');
+let Employee = require('./models/employee').Employee;
 
 //Load view Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -84,8 +84,11 @@ app.get('/', function (req, res) {
 //Route files
 let employee = require('./routes/employee');
 let users = require('./routes/users');
+let person = require('./routes/person');
+
 app.use('/admin', employee);
 app.use('/users', users);
+app.use('/employee', person);
 
 const port = 3333;
 
