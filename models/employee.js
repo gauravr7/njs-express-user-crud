@@ -1,6 +1,36 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//Address Schema
+let AddressScheme = new Schema({
+    houseNumber: {
+        type: String
+    },
+    city: {
+        type: String
+    },
+    state: {
+        type: String
+    },
+    pin: {
+        type: Number
+    }
+})
+
+//Dept Schema
+let DeptSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        lowercase: true
+    },
+    region: {
+        type: String,
+        required: true,
+        lowercase: true
+    }
+})
+
 //Employee Schema
 let EmployeeSchema = new Schema({
     name: {
@@ -12,37 +42,28 @@ let EmployeeSchema = new Schema({
         type: Number, 
         required: true
     },
+    salary: {
+        type: Number
+    },
     gender: {
         type: String, 
         required: true
     },
+    dept: DeptSchema,
     dob: {
-        type: Date,
-        required: true
+        type: Date
     },
     doj: {
-        type: Date,
-        required: true
+        type: Date
     },
     address: {
-        houseNumber: {
-            type: Number, 
-            required: true
-        },
-        city: {
-            type: String, 
-            required: true
-        },
-        state: {
-            type: String,
-            required: true
-        },
-        pin: {
-            type: Number, 
-            required: true
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Address'
     }
 });
 
-
-module.exports = mongoose.model('Employee', EmployeeSchema);
+module.exports = {
+    Employee: mongoose.model('Employee', EmployeeSchema),
+    Dept: mongoose.model('Dept', DeptSchema),
+    Address: mongoose.model('Address', AddressScheme)
+}

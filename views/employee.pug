@@ -11,11 +11,29 @@ block content
             tr
                 th Name
                 th Age
+                if employee.dept
+                    th Dept
+                    th Region
+                if employee.salary
+                    th Salary
+                if employee.address
+                    th Address
                 th Gender
         tbody
             tr
                 td= employee.name
                 td= employee.age
+                if employee.dept
+                    td= employee.dept.name
+                    td= employee.dept.region
+                if employee.salary
+                    td= employee.salary
+                if employee.address
+                    td  
+                        p= employee.address.houseNumber 
+                        p= employee.address.city
+                        p= employee.address.state
+                        p= employee.address.pin
                 td= employee.gender
 
     hr
