@@ -10,7 +10,7 @@ class AdminLayout extends React.Component {
           <link rel="stylesheet" href="/assets/main.css"></link>
         </head>
         
-        <body>
+        <body className="app-react">
           <nav class="navbar navbar-expand-md navbar-dark bg-dark"><a class="navbar-brand" href="#">EMS Admin</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
             </button>

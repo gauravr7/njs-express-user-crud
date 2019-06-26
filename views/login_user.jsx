@@ -2,6 +2,9 @@ var React = require('react');
 var LoginLayout = require('./layouts/login-layout');
 
 class LoginForm extends React.Component {
+  showMessage() {
+    alert('HI');
+  } 
   render() {
     return (
     <LoginLayout>
@@ -18,8 +21,11 @@ class LoginForm extends React.Component {
           <div class="checkbox mb-3">
             <label></label>
             <input type="checkbox" value="remember-me"/>Remember me</div>
+          
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
+        <button onClick={this.showMessage}>Show React alert</button>
+        <button onClick={window.alert('gem gem')}>Show Js alert</button>
       </div>
     </LoginLayout>);
   }

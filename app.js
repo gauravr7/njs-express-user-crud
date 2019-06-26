@@ -15,8 +15,13 @@ const app = express();
 let Employee = require('./models/employee').Employee;
 
 //Load view Engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
+
+// Load React View Engine
+app.set('views',  path.join(__dirname, 'views'));
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
 
 //Setup Mongoose connection
 const mongoDB = process.env.MONGODB_URI || config.database;
@@ -78,7 +83,8 @@ app.get('*', function(req, res, next) {
 
 // Home Route
 app.get('/', function (req, res) {
-    res.send('Site Root Page');
+    //res.send('Site Root Page');
+    res.render('dummy-react', { name: 'John' });
 })
 
 //Route files

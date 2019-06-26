@@ -11,7 +11,7 @@ class LoginLayout extends React.Component {
           <link rel="stylesheet" href="/assets/signin.css"></link>
         </head>
         
-        <body class="text-center">{this.props.children}</body>
+        <body className="app-react text-center">{this.props.children}</body>
 
         <script src="/assets/jquery/dist/jquery.min.js"></script>
         <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
