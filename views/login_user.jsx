@@ -25,7 +25,6 @@ class LoginForm extends React.Component {
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
         <button onClick={this.showMessage}>Show React alert</button>
-        <button onClick={window.alert('gem gem')}>Show Js alert</button>
       </div>
     </LoginLayout>);
   }
